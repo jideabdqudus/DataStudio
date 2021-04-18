@@ -1,0 +1,298 @@
+// .standard-back-container {
+//   .content {
+//     width: 100%;
+//     position: relative;
+//     padding: 41px 140px 0;
+//   }
+// }
+
+// .whole-page-spinner {
+//   width: calc(100% - 220px);
+//   height: 100%;
+//   position: fixed;
+//   top: 0;
+//   right: 0;
+//   z-index: 11;
+//   background: rgba(255, 255, 255, 0.7);
+//   opacity: 0;
+//   pointer-events: none;
+//   transition: opacity 0.2s ease;
+
+//   &::before {
+//     content: '';
+//     width: 75px;
+//     height: 75px;
+//     position: absolute;
+//     top: calc(50% - 37px);
+//     left: calc(50% - 37px);
+//     background-position: 50% 50%;
+//     background-size: 50px;
+//     background-repeat: no-repeat;
+//     background-image: url(../../../assets/images/icons/whole-page-spinner_spinner.png);
+//     animation: wholePageSpinnerIcon;
+//     animation-duration: 0.7s;
+//     animation-iteration-count: infinite;
+//     animation-timing-function: linear;
+//   }
+
+//   &_visible {
+//     opacity: 1;
+//     pointer-events: auto;
+//   }
+// }
+
+// @keyframes wholePageSpinnerIcon {
+//   0% {
+//     transform: rotate(0);
+//   }
+
+//   100% {
+//     transform: rotate(360deg);
+//   }
+// }
+
+// .backIcon {
+//   //border-bottom: 1px solid rgba(0, 0, 0, .1);
+//   position: relative;
+//   height: 65px;
+//   margin-bottom: 30px;
+
+//   &__h1 {
+//     color: rgba(0, 0, 0, 0.75);
+//     font-size: 37px;
+//     font-weight: 300;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//     white-space: nowrap;
+//     width: calc(100% - 500px);
+//     margin-bottom: 0 !important;
+
+//     &_fullWidth {
+//     }
+
+//     &_reducedWidth {
+//       max-width: calc(100% - 670px);
+//     }
+//   }
+
+//   &__darkGrayTitle {
+//     color: #4e4e4e;
+//     font-weight: 500;
+//   }
+
+//   &__lightGrayTitle {
+//     color: #bbb;
+//     font-weight: 300;
+//   }
+
+//   &__backLink {
+//     display: block;
+//     width: 50px;
+//     height: 70px;
+//     position: absolute;
+//     z-index: 2;
+//     left: -82px;
+//     top: 2px;
+
+//     &::before {
+//       content: '';
+//       width: 100%;
+//       height: 100%;
+//       position: absolute;
+//       z-index: 0;
+//       top: 50%;
+//       left: 50%;
+//       transform: translate(-50%, -50%);
+//      // background: #fff;
+//       border-radius: 100px;
+//      // box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+//       transition: width 0.2s ease, height 0.2s ease;
+//     }
+
+//     &::after {
+//       content: '';
+//       width: 25px;
+//       height: 25px;
+//       position: absolute;
+//       top: 50%;
+//       left: 50%;
+//       transform: translate(calc(-50% - 2px), -50%);
+//       background-position: 50% 50%;
+//       background-size:30px;
+//       background-repeat: no-repeat;
+//       background-image: url(../../../assets/images/datastudio/chevrons-right.png);
+//     }
+
+//     &:hover {
+//       &::before {
+//         width: calc(100% + 4px);
+//         height: calc(100% + 4px);
+//       }
+//     }
+//   }
+// }
+
+// /**** MEDIA QUERY ****/
+
+// @media (max-width: 1800px) {
+//   .backIcon {
+//     &__h1 {
+//       &_reducedWidth {
+//         width: 100%;
+//         max-width: 100%;
+//       }
+//     }
+//   }
+// }
+
+// @media (max-width: 1600px) {
+//   .backIcon {
+//     &__h1 {
+//       width: calc(100% - 100px);
+
+//       &_fullWidth {
+//         width: 100%;
+//       }
+//     }
+//   }
+// }
+
+// @media (max-width: 1199px) {
+// }
+
+// @media (max-width: 1179px) {
+//   .standard-back-container {
+//     .content {
+//       padding: 41px 70px 0;
+//     }
+//   }
+
+//   .backIcon {
+//     padding-left: 0;
+
+//     &__backLink {
+//       width: 35px;
+//       height: 35px;
+//       top: 12px;
+//       left: -65px;
+
+//       &::after {
+//         background-size: 30px;
+//       }
+//     }
+//   }
+// }
+
+// @media (max-width: 991px) {
+//   .standard-back-container {
+//     .content {
+//       position: relative;
+//       padding: 0 20px 20px 20px;
+//     }
+//   }
+
+//   .whole-page-spinner {
+//     width: 100%;
+//     height: calc(100% - 94px);
+//     top: 94px;
+//   }
+
+//   .backIcon {
+//     margin: 0 -20px 25px;
+//     box-sizing: border-box;
+//     height: 100px;
+//     padding: 28px 40px 0 40px;
+//     width: 100%;
+
+//     &::before,
+//     &::after {
+//       content: '';
+//       width: 100vw;
+//       height: 1px;
+//       position: absolute;
+//       left: 20px;
+//       bottom: 0;
+//       background: rgba(0, 0, 0, 0.1);
+//     }
+
+//     &::after {
+//       top: 0;
+//       bottom: auto;
+//     }
+
+//     &__h1 {
+//       font-size: 33px;
+//       line-height: 40px;
+//       padding: 0 0 0 53px;
+//       border-bottom: none;
+//       margin: 0;
+//       margin-right: 40px;
+//       width: calc(100% - 160px);
+
+//       &_fullWidth {
+//         margin-right: 0;
+//         width: 100%;
+//       }
+//     }
+
+//     &__backLink {
+//       position: absolute;
+//       left: 38px;
+//       top: 30px;
+//       font-size: 40px;
+//       line-height: 40px;
+
+//       &::after {
+//         background-size: 30px;
+//       }
+//     }
+//   }
+// }
+
+// @media (max-width: 767px) {
+//   .standard-back-container {
+//     .content {
+//       padding: 0 12px;
+//     }
+//   }
+
+//   .backIcon {
+//     height: auto;
+//     padding: 10px 0 12px;
+//     margin: 0 0 15px !important;
+//     border: none;
+
+//     &::before {
+//       content: '';
+//       width: 100vw;
+//       height: 0;
+//       position: absolute;
+//       left: 0;
+//       bottom: 0;
+//       border-bottom: 1px rgba(0, 0, 0, 0.03) solid;
+//     }
+
+//     &::after {
+//       display: none;
+//     }
+
+//     &__h1 {
+//       font-size: 24px;
+//       /*white-space: normal;
+//           line-height: 30px;
+//           padding-top: 5px;*/
+//       padding-left: 43px;
+//       width: 100%;
+//     }
+
+//     &__backLink {
+//       width: 27px;
+//       height: 27px;
+//       top: 16px;
+//       left: 7px;
+//     }
+//   }
+// }
+
+// @media (max-width: 575px) {
+// }
