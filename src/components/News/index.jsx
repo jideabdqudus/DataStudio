@@ -102,7 +102,7 @@ const News = () => {
                 }}
               >
                 <h1 style={{ float: 'left', color: 'white', fontWeight: '600', fontSize: '18px' }}>
-                  <React.Fragment>Coinrule News</React.Fragment>
+                  <React.Fragment>DataStudio News</React.Fragment>
                 </h1>
                 <iframe
                   src={news.link}
