@@ -7,7 +7,6 @@ import FirstTicker from "./components/FirstTicker/index.jsx";
 import AboutCoin from "./components/About/index";
 import SymbolWidget from "./components/SymbolWidget/index.jsx";
 import SocialButtons from "./components/SocialButtons/index.jsx";
-import TechnicalWidget from "./components/TechnicalWidget/index.jsx";
 import CryptoWidget from "./components/CryptoWidget/index.jsx";
 import MiniChart from "./components/MiniChart/index.jsx";
 import News from "./components/News/index.jsx";
@@ -30,22 +29,26 @@ export class App extends React.Component {
       from: "BTC",
       to: "USD",
       exchangeName: "",
-      exchangeQuotes: [],
+      exchangeQuotes: [
+        "BNB",
+        "BTC",
+        "USDT",
+        "WIN",
+        "ETH",
+        "HOT",
+        "TRX",
+        "NEO",
+        "UNI",
+        "CAKE",
+      ],
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleChangeTo = this.handleChangeTo.bind(this);
     this.onSearch = this.onSearch.bind(this);
     this.onSearchTo = this.onSearchTo.bind(this);
-    this.handleSelectedExchange = this.handleSelectedExchange.bind(this);
   }
 
-  // componentDidMount() {
-  //   stores.info.getLists().then((authorized) => stores.app.unauthorized(authorized));
-  //   stores.userInfo.getExchanges().then((authorized) => stores.app.unauthorized(authorized));
-  // }
-
   decideLogo(exchange) {
-    // TODO: add logos for all exchanges, look into ExchangesPage component, there should already be something
     if ((exchange = "binance")) {
       return <img src={Binance} width="20px" alt="Binance" />;
     } else if ((exchange = "kraken")) {
@@ -67,17 +70,6 @@ export class App extends React.Component {
     });
   }
 
-  // handleSelectedExchange(e) {
-  //   const exchangeValue = e.target.value.toLowerCase();
-  //   const exchangeName = e.target.value.toUpperCase();
-  //   exDetails = toJS(stores.info.exchanges.filter((ex) => ex.uid === exchangeValue)[0]);
-  //   const exchangeCoins = exDetails.quote_coins;
-  //   this.setState({
-  //     exchangeQuotes: exchangeCoins,
-  //     exchangeName: exchangeName,
-  //   });
-  // }
-
   onSearch(value) {
     this.setState({
       from: value,
@@ -94,74 +86,84 @@ export class App extends React.Component {
     const { from, to, exchangeName, exchangeQuotes } = this.state;
 
     return (
-      <Fragment>
+      <div className="container">
         <Fragment>
-          <div>
-            <div className={"margin-bottom-20"}>
-              {" "}
-              <div className={"block-display"}>
-                <h4 className={"small-text"}>Top movers</h4>
-                <FirstTicker />
+          <Fragment>
+            {titleDataStudio}
+            <div>
+              <div className={"margin-bottom-20"}>
+                {" "}
+                <div className={"block-display"}>
+                  <h4 className={"small-text"}>Top movers</h4>
+                  <FirstTicker />
+                </div>
               </div>
-            </div>
 
-            {/* <Fragment>
-                    <SymbolWidget
-                      from={from}
-                      to={to}
-                      exchangeName={exchangeName}
-                      exchangeQuotes={exchangeQuotes}
-                      decideLogo={this.decideLogo}
-                      handleChange={this.handleChange}
-                      handleChangeTo={this.handleChangeTo}
-                      handleSelectedExchange={this.handleSelectedExchange}
-                      onSearch={this.onSearch}
-                      onSearchTo={this.onSearchTo}
-                    />
-                  </Fragment> */}
+              <Fragment>
+                <SymbolWidget
+                  from={from}
+                  to={to}
+                  exchangeName={exchangeName}
+                  exchangeQuotes={exchangeQuotes}
+                  decideLogo={this.decideLogo}
+                  handleChange={this.handleChange}
+                  handleChangeTo={this.handleChangeTo}
+                  handleSelectedExchange={this.handleSelectedExchange}
+                  onSearch={this.onSearch}
+                  onSearchTo={this.onSearchTo}
+                />
+              </Fragment>
 
-            <Row>
-              <Col xs={{ span: 24 }} lg={{ span: 18 }}>
-                <AboutCoin />
-                <Fragment>
-                  <SocialButtons />
-                </Fragment>
-                <div className={"margin-bottom-20"}>
-                  <h1 className={"sub-heading"}>Watchlist</h1>
-                  <Row>
-                    <Col xs={{ span: 24 }} lg={{ span: 24 }}>
-                      <MiniChart exchangeName={exchangeName} />
-                    </Col>
-                  </Row>
-                </div>
-                <div style={{ marginTop: "30px" }}>
-                  <h1 className="sub-heading">Today's Prices</h1>
-                  <CryptoWidget />
-                </div>
-              </Col>
-              <Col xs={{ span: 24 }} lg={{ span: 5 }}>
-                <Row>
-                  <div
-                    label="News"
-                    className="infotab-list-active"
-                    style={{
-                      height: "35px",
-                      marginBottom: "10px",
-                      fontSize: "20px",
-                      fontWeight: "600",
-                      textAlign: "center",
-                      marginTop: "20px",
-                    }}
-                  >
-                    News
+              <Row>
+                <Col xs={{ span: 24 }} lg={{ span: 18 }}>
+                  <AboutCoin />
+                  <Fragment>
+                    <SocialButtons />
+                  </Fragment>
+                  <div className={"margin-bottom-20"}>
+                    <h1 className={"sub-heading"}>Watchlist</h1>
+                    <Row>
+                      <Col xs={{ span: 24 }} lg={{ span: 24 }}>
+                        <MiniChart exchangeName={exchangeName} />
+                      </Col>
+                    </Row>
                   </div>
-                  <News />
-                </Row>
-              </Col>
-            </Row>
-          </div>
+                  <div style={{ marginTop: "30px" }}>
+                    <h1 className="sub-heading">Today's Prices</h1>
+                    <CryptoWidget />
+                  </div>
+                </Col>
+                <Col xs={{ span: 24 }} lg={{ span: 5 }}>
+                  <Row>
+                    <div
+                      label="News"
+                      className="infotab-list-active"
+                      style={{
+                        height: "35px",
+                        marginBottom: "10px",
+                        fontSize: "20px",
+                        fontWeight: "600",
+                        textAlign: "center",
+                        marginTop: "20px",
+                      }}
+                    >
+                      News
+                    </div>
+                    <News />
+                  </Row>
+                </Col>
+              </Row>
+            </div>
+          </Fragment>
         </Fragment>
-      </Fragment>
+        <code style={{ color: "white", textAlign: "center", alignItems:"center" }}>
+          {" "}
+          Built by{" "}
+          <a href="https://abdulqudus.com" target="__blank">
+            Jide Abdul-Qudus
+          </a>
+        </code>
+      </div>
     );
   }
 }

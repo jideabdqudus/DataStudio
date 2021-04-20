@@ -1,13 +1,39 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
 body {
-  font-family: 'Roboto', sans-serif;
-  //background: linear-gradient(270.17deg, #14171f 83%, #1c2237 101.11%);
+  font-family: "Roboto", sans-serif;
+  background: linear-gradient(270.17deg, #14171f 83%, #1c2237 101.11%);
+}
+
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1170px;
+  }
 }
 
 .wrapperBody {
-  font-family: 'Roboto', sans-serif !important;
-  background: linear-gradient(270.17deg, #14171f 83%, #1c2237 101.11%) !important;
+  font-family: "Roboto", sans-serif !important;
+  background: linear-gradient(
+    270.17deg,
+    #14171f 83%,
+    #1c2237 101.11%
+  ) !important;
   max-width: 100% !important;
   box-sizing: border-box !important;
   padding-left: 100px !important;
@@ -76,7 +102,7 @@ body {
   font-size: 56px;
   font-weight: 700;
   color: white !important;
-  font-family: 'Poppins', sans-serif !important;
+  font-family: "Poppins", sans-serif !important;
 }
 
 .block-display {
@@ -202,8 +228,8 @@ body {
   text-decoration: none;
   padding: 0 1.8em 2.5px;
   transition-duration: 0.3s;
-  font-family: CW BR Firma, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen-Sans, Ubuntu,
-    Cantarell, Helvetica Neue, sans-serif;
+  font-family: CW BR Firma, -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
   font-weight: 600;
   text-transform: capitalize;
   transition-property: background-color, opacity, color, transform, box-shadow;
@@ -232,7 +258,7 @@ body {
     margin: 10px;
   }
   .news-cover {
-    background: '#14171F';
+    background: "#14171F";
     width: 100%;
     height: 10px;
     position: relative;
@@ -276,7 +302,7 @@ body {
 }
 
 .news-cover {
-  background: '#14171F';
+  background: "#14171F";
   width: 100%;
   height: 70px;
   position: relative;
@@ -290,7 +316,7 @@ body {
 
 @media (max-width: 768px) {
   .news-cover {
-    background: '#14171F';
+    background: "#14171F";
     width: 100%;
     height: 200px;
     position: relative;
@@ -518,7 +544,11 @@ body {
   float: right;
   width: 30px;
   height: 100px;
-  background: radial-gradient(222.99% 44.88% at 0% -16.54%, #6c7c9b 0%, #1c2237 100%);
+  background: radial-gradient(
+    222.99% 44.88% at 0% -16.54%,
+    #6c7c9b 0%,
+    #1c2237 100%
+  );
   border-radius: 12px 0px 0px 12px;
 }
 
@@ -562,7 +592,7 @@ body {
   transition: opacity 0.2s ease;
 
   &::before {
-    content: '';
+    content: "";
     width: 75px;
     height: 75px;
     position: absolute;
@@ -571,7 +601,7 @@ body {
     background-position: 50% 50%;
     background-size: 50px;
     background-repeat: no-repeat;
-    background-image: url(../../assets/images/icons/whole-page-spinner_spinner.png);
+    background-image: url(./assets/external-link.png);
     animation: wholePageSpinnerIcon;
     animation-duration: 0.7s;
     animation-iteration-count: infinite;
@@ -594,5 +624,35 @@ body {
 }
 
 .exchangeBtn :hover {
-  opacity: .5;
+  opacity: 0.5;
 }
+
+//Jide & DataStudio style
+
+.dino {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 10rem;
+  align-self: flex-end;
+  float: right;
+  width: 30px;
+  height: 100px;
+  background: radial-gradient(
+    222.99% 44.88% at 0% -16.54%,
+    #6c7c9b 0%,
+    #1c2237 100%
+  );
+  border-radius: 12px 0px 0px 12px;
+}
+
+.rotated-text {
+  color: #f2f5f7;
+  transform: rotateZ(-90deg);
+}
+
+.ant-select {
+  color: white !important;
+  font-size: 30px !important;
+}
+
+//End of DataStudio style

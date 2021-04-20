@@ -11,7 +11,7 @@ class CryptoWidget extends React.PureComponent {
     script.async = true;
     script.innerHTML = JSON.stringify({
       width: "100%",
-      height: "798",
+      height: "400",
       defaultColumn: "overview",
       screener_type: "crypto_mkt",
       displayCurrency: "BTC",
